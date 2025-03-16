@@ -16,22 +16,6 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
 
     if(!volunteer) notFound();
 
-    // const handleDelete = async (event: React.FormEvent) => {
-    //     event.preventDefault();
-    //     try {
-    //         const response = await fetch(`api/volunteers/${volunteer.id}`, {
-    //             method: "DELETE",
-    //         });
-    
-    //         // const result = await response.json();
-    
-    //         if(response.ok) {
-    //             window.location.href = "/";
-    //         }
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
     return(
         <div>
             <div className="flex flex-col">
@@ -62,15 +46,6 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
                     Place of employment: {volunteer.place_employment}
                     </h2>
                 </div>
-                {/* <form
-                onSubmit={handleDelete}>
-                    <button 
-                    type="submit"
-                    className="btn"
-                    >
-                        delete
-                    </button>
-                </form> */}
                 <DeleteButton volunteer={volunteer}/>
             </div>
         </div> 
