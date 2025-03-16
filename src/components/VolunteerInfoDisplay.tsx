@@ -8,9 +8,8 @@ interface VolunteerInfoDisplayProps {
 
 export default function VolunteerInfoDisplay({volunteer}: VolunteerInfoDisplayProps) {
     return(
-        <Link href={"/volunteers/" + volunteer.id} 
-        className="card w-full bg-base-100 hover:shadow-xl">
-            
+        <Link href={`/volunteers/` + volunteer.id} 
+        className="card card-bordered w-2/3 bg-base-100 border-[#48752C] hover:shadow-xl">
             <figure>
                 <Image 
                     src="/images/avatar-placeholder.png"

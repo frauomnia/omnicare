@@ -14,8 +14,6 @@ export default function ApplicationMainButton(
 ) {
     const {pending} = useFormStatus();
 
-
-
     return(
         <button
         {...props}
@@ -25,6 +23,6 @@ export default function ApplicationMainButton(
         >
         {pending && <span className="loading loading-bars"></span>}
         {children}
-            </button>
+        </button>
     )
 }
