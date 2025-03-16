@@ -1,19 +1,37 @@
-import prisma from "@/lib/db/prisma"
-import { notFound } from "next/navigation"
+import DeleteButton from '@/components/DeleteButton';
+import prisma from '@/lib/db/prisma';
 import Image from 'next/image'
+import { notFound } from 'next/navigation';
 
 interface VolunteerPageProps {
     params: {
-        id: string,
+        id: string;
     }
 }
-
 export default async function VolunteerPage( { params } : VolunteerPageProps) 
 {
-    const { id } = await params;
-    const volunteer = await prisma.volunteer.findUnique({where: {id}})
-    if (!volunteer) notFound();
+    const volunteer = await prisma.volunteer.findUnique({
+        where: {id: params.id}
+    })
 
+    if(!volunteer) notFound();
+
+    // const handleDelete = async (event: React.FormEvent) => {
+    //     event.preventDefault();
+    //     try {
+    //         const response = await fetch(`api/volunteers/${volunteer.id}`, {
+    //             method: "DELETE",
+    //         });
+    
+    //         // const result = await response.json();
+    
+    //         if(response.ok) {
+    //             window.location.href = "/";
+    //         }
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
     return(
         <div>
             <div className="flex flex-col">
@@ -44,7 +62,18 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
                     Place of employment: {volunteer.place_employment}
                     </h2>
                 </div>
+                {/* <form
+                onSubmit={handleDelete}>
+                    <button 
+                    type="submit"
+                    className="btn"
+                    >
+                        delete
+                    </button>
+                </form> */}
+                <DeleteButton volunteer={volunteer}/>
             </div>
         </div> 
     )
 }
+

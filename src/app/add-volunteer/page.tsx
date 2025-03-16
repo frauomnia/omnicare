@@ -1,9 +1,5 @@
 "use client"
-import ApplicationMainButton from "../../components/ApplicationMainButton";
-import prisma from "@/lib/db/prisma";
-import { redirect } from 'next/navigation'
 import Navbar from "../../components/Navbar";
-
 
 export default function AddVolunteerPage() {
 
@@ -22,7 +18,7 @@ export default function AddVolunteerPage() {
                 body: JSON.stringify(formValues)
             });
 
-            const result = await response.json();
+            // const result = await response.json();
 
             if(response.ok) {
                 window.location.href = "/";
