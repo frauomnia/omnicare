@@ -15,9 +15,19 @@ model Volunteer {
   first_name        String
   home_country      String
   last_name         String
-  medical_speciality String  
-
+  medical_speciality String
+  clinic_address    String  
+  feeback Feedback[]
   @@map("volunteers")
+}
+
+model Feedback {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  volunteerId   String  @db.ObjectId
+  // title   String
+  content String
+  createdAt DateTime @default(now())
+  volunteer   Volunteer?   @relation(fields: [volunteerId], references: [id])
 }
 
 // Source: https://authjs.dev/getting-started/adapters/prisma
@@ -37,7 +47,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  role          UserRole?       @default(ADMIN)
+  role          UserRole?       @default(USER)
   // Optional for WebAuthn support
   Authenticator Authenticator[]
  

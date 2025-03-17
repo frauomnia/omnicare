@@ -8,6 +8,7 @@ interface VolunteerPageProps {
         id: string;
     }
 }
+
 export default async function VolunteerPage( { params } : VolunteerPageProps) 
 {
     const volunteer = await prisma.volunteer.findUnique({
