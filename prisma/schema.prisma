@@ -16,7 +16,8 @@ model Volunteer {
   home_country      String
   last_name         String
   medical_speciality String
-  clinic_address    String  
+  clinic_address    String 
+  published         Boolean? @default(false) 
   feeback Feedback[]
   @@map("volunteers")
 }

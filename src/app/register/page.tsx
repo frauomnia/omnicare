@@ -83,6 +83,13 @@ export default function AddVolunteerPage() {
                         className="input input-bordered mb-3 w-1/2">
                     </input>
                     <br/>
+                    <input 
+                        required
+                        name="clinic_address" 
+                        placeholder="clinic address"
+                        className="input input-bordered mb-3 w-1/2">
+                    </input>
+                    <br/>
                     <button
                     type="submit"
                     className="btn">Submit

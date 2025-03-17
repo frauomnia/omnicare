@@ -11,4 +11,21 @@ export default async function handler(req: any, res: any) {
                     return res.status(500).json({error: "Internal server error"});
                 }
     }
+
+    if (req.method === "PATCH") {
+        try {
+            await prisma.volunteer.update({
+                where: {
+                    id
+                }, 
+                data: {
+                published: true
+                }
+            })
+                    return res.status(200).json({ message: "Success: volunteer published"});
+                } catch (error) {
+                    return res.status(500).json({error: "Internal server error"});
+                }
+    }
 } 
+
