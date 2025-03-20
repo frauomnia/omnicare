@@ -1,3 +1,4 @@
+import CommentsDisplay from '@/components/CommentsDisplay';
 import DeleteButton from '@/components/DeleteButton';
 import Navbar from '@/components/Navbar';
 import prisma from '@/lib/db/prisma';
@@ -11,19 +12,15 @@ interface VolunteerPageProps {
 }
 
 export default async function VolunteerPage( { params } : VolunteerPageProps) 
-{   
-    /* due to an error to await params before 
-    using them as paramas are now treated as a Promise */
-    const { id } = await params;
+{
     const volunteer = await prisma.volunteer.findUnique({
-        where: { id }
+        where: {id: params.id}
     })
 
     if(!volunteer) notFound();
 
     return(
         <div>
-            <Navbar/>
             <div className="flex flex-col">
                 <Image 
                     src="/images/avatar-placeholder.png"
@@ -53,6 +50,7 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
                     </h2>
                 </div>
                 <DeleteButton volunteer={volunteer}/>
+                <CommentsDisplay volunteer={volunteer} />
             </div>
         </div> 
     )
