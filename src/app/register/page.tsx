@@ -1,4 +1,5 @@
 "use client"
+
 import Navbar from "../../components/Navbar";
 
 export default function AddVolunteerPage() {
@@ -30,7 +31,7 @@ export default function AddVolunteerPage() {
     }
     return(
         <div>
-            <Navbar></Navbar>
+            <Navbar />
             <div>
                 <h1 className="text-lg mb-5 mt-5 font-semibold">Register as a volunteer</h1>
                 <form onSubmit={handleSubmit}>

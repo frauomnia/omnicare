@@ -1,3 +1,4 @@
+import CommentsDisplay from '@/components/CommentsDisplay';
 import DeleteButton from '@/components/DeleteButton';
 import Navbar from '@/components/Navbar';
 import prisma from '@/lib/db/prisma';
@@ -51,6 +52,7 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
                     </h2>
                 </div>
                 <DeleteButton volunteer={volunteer}/>
+                <CommentsDisplay volunteer={volunteer} />
             </div>
         </div> 
     )
