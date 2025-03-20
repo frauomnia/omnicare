@@ -58,7 +58,7 @@ export default function CommentsDisplay({volunteer}: VolunteerInfoDisplayProps) 
             <div>
                 <form onSubmit={handleSubmit}>
                     <textarea
-                        className='w-full p-2 border rounded-md'
+                        className='w-full p-2 border rounded-md '
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
                         placeholder='add a comment'
