@@ -1,7 +1,7 @@
 import prisma from "@/lib/db/prisma";
 
-export default async function handler(req: { query: { medicalSpeciality: string; country: string; place: string; }; }, res: any) {
-    const { medicalSpeciality, country, place} = req.query;
+export default async function handler(req: { query: { medicalSpeciality: string; country: string; place: string; language: string;}; }, res: any) {
+    const { medicalSpeciality, country, place, language} = req.query;
 
     let queryFilter: any = {};
 
@@ -16,6 +16,11 @@ export default async function handler(req: { query: { medicalSpeciality: string;
     if (place) {
       queryFilter.place_employment = place;
     }
+
+    if (language) {
+      queryFilter.first_language = language;
+    }
+
     // fetch data from database using Prisma "findMany" method
     try {
       const volunteersList = await prisma.volunteer.findMany({

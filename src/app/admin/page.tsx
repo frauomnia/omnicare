@@ -10,7 +10,8 @@ export default function Home() {
   const [selectedFilters, setSelectedFilters] = useState ({
     medicalSpeciality: '',
     country: '',
-    place: ''
+    place: '',
+    language: ''
   });
 
   // fetch filter options
@@ -33,7 +34,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchVolunteers() {
       try {
-        const response = await fetch(`/api/volunteers?medicalSpeciality=${selectedFilters.medicalSpeciality}&country=${selectedFilters.country}&place=${selectedFilters.place}`);
+        const response = await fetch(`/api/volunteers?medicalSpeciality=${selectedFilters.medicalSpeciality}&country=${selectedFilters.country}&place=${selectedFilters.place}&language=${selectedFilters.language}`);
         const data = await response.json();
         setVolunteers(data);
       } catch (error) {

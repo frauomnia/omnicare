@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Volunteer } from "@prisma/client";
-import { connect } from 'http2';
 
 interface VolunteerInfoDisplayProps {
     volunteer: Volunteer;
@@ -12,7 +11,6 @@ export default function CommentsDisplay({volunteer}: VolunteerInfoDisplayProps) 
     
     const [comments, setComments] = useState<any>([]);
     const [newComment, setNewComment] = useState<any>('');
-
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -49,45 +47,40 @@ export default function CommentsDisplay({volunteer}: VolunteerInfoDisplayProps) 
                 setComments((prevComments: any) => [newCommentData, ...prevComments]);
                 setNewComment('');
             }
-        } catch (error) {
-            console.error(error);
-        }
-
+            
+            } catch (error) {
+                console.error(error);
+            }
     }
     return(
        <>
-           {/* add new comment form */}
-           <div>
-                    <form onSubmit={handleSubmit}>
-                        <textarea
+            {/* add new comment form */}
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <textarea
                         className='w-full p-2 border rounded-md'
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
                         placeholder='add a comment'
-                       />
-                        <button type='submit' className='btn'>
-                            Add Comment
-                        </button>
-                    </form>
-                </div>
-                {/* show existing comments list */}
-                <div>
-                <h3>
-                    Feedback:
-                </h3>
+                    />
+                    <button type='submit' className='btn'>
+                        Add Comment
+                    </button>
+                </form>
+            </div>
+            {/* show existing comments list */}
+            <div>
                 {comments.length > 0 ? (
                     comments.map((comment: any) => (
-                        
                         <div key={comment.id}> 
                             <p>{comment.content}</p>
                             <small>{new Date(comment.createdAt).toLocaleString()}</small>
-                            </div>
+                        </div>
                     ))
                 ) : (
                     <p>No comments yet</p>
-                )
-            }
-                </div>
+                )}
+            </div>
        </>
     )
 }

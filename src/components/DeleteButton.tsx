@@ -15,7 +15,7 @@ export default function DeleteButton({volunteer}: VolunteerInfoDisplayProps) {
             });
     
             // const result = await response.json();
-    
+            
             if(response.ok) {
                 window.location.href = "/";
             }
@@ -25,9 +25,8 @@ export default function DeleteButton({volunteer}: VolunteerInfoDisplayProps) {
     }
     return(
        <>
-        <button onClick={handleDelete}
-        className="btn">
-                Delete
+        <button onClick={handleDelete} className="btn">
+            Delete
         </button>
        </>
     )

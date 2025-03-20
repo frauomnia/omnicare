@@ -9,10 +9,10 @@ export default function Navbar() {
                 <h1 className="text-center font-bold text-2xl text-[#48752C]">
                     OmniCare
                     <br />
-                    <span className="font-normal text-base text-[#48752C]">Healthcare for all</span>
+                    <small className="font-normal text-base text-[#48752C]">Healthcare for all</small>
                 </h1>
             </div>
-            <div className="bg-[#e3f5d7]">
+            <div className="bg-[#F1E6D0] rounded-lg text-[#48752C] font-bold">
                 <div className="navbar max-w-7xl flex-col sm:flex-row m-auto gap-3">
                     <div className="flex-1">
                         <Image
@@ -24,9 +24,7 @@ export default function Navbar() {
                         />
                         <Link className="ml-5 mt-5" href='/'>Home</Link>
                         <Link className="ml-5 mt-5" href="/register/">Register</Link>
-                            <Link className="ml-5 mt-5" href="/log-in/">Log in</Link>
-                            <div>
-                            </div>
+                        <Link className="ml-5 mt-5" href="/log-in/">Log in</Link>
                     </div>
                 </div>
             </div>
