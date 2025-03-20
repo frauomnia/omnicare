@@ -61,10 +61,10 @@ export default function CommentsDisplay({volunteer}: VolunteerInfoDisplayProps) 
                         className='w-full p-2 border rounded-md '
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
-                        placeholder='add a comment'
+                        placeholder='Give feedback here...'
                     />
                     <button type='submit' className='btn'>
-                        Add Comment
+                        Give feedback
                     </button>
                 </form>
             </div>
@@ -72,13 +72,15 @@ export default function CommentsDisplay({volunteer}: VolunteerInfoDisplayProps) 
             <div>
                 {comments.length > 0 ? (
                     comments.map((comment: any) => (
-                        <div key={comment.id}> 
+                        <div key={comment.id}
+                        className="ml-auto mr-auto border-[#48752C] border-2 rounded-md mt-5 p-2"
+                        > 
                             <p>{comment.content}</p>
                             <small>{new Date(comment.createdAt).toLocaleString()}</small>
                         </div>
                     ))
                 ) : (
-                    <p>No comments yet</p>
+                    <p>No feedback yet for this volunteer</p>
                 )}
             </div>
        </>

@@ -53,7 +53,7 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
                 </div>
                 {/* <DeleteButton volunteer={volunteer}/> */}
             </div>
-            <div className='ml-auto mr-auto w-2/3 mt-5'>
+            <div className='ml-auto mr-auto w-1/2 mt-5'>
                 <CommentsDisplay volunteer={volunteer} />
             </div>
         </div> 
