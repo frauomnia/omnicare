@@ -21,6 +21,7 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
 
     return(
         <div>
+            <Navbar />
             <div className="flex flex-col">
                 <Image 
                     src="/images/avatar-placeholder.png"

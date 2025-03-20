@@ -42,7 +42,6 @@ export default function Home() {
         console.error(error);
       }
     }
-
     fetchVolunteers();
     // re-fetch volunteers' list on filter change
   }, [selectedFilters]);
@@ -57,26 +56,26 @@ export default function Home() {
    <div>
     <Navbar />
     <FilterSystem 
-    medicalSpecialities={medicalSpecialities}
-    countries={countries}
-    places={places}
-    selectedFilters={selectedFilters}
-    onFilterChange={handleFilterChange}
+      medicalSpecialities={medicalSpecialities}
+      countries={countries}
+      places={places}
+      selectedFilters={selectedFilters}
+      onFilterChange={handleFilterChange}
     />
-
     {/* show list of volunteers */}
-      <div className="my-4 grid grid-cols-1 gap-6">
-        <div> 
-          <h3 className="my-4 font-bold">List of volunteer doctors</h3>
-        </div>
-        {volunteers.length === 0 ? (
-            // error handling in case of no volunteers
-          <div className="text-red-500"> No volunteers found</div>
-        ) : (
+    <div> 
+      <h3 className="my-4 font-bold">List of volunteer doctors</h3>
+    </div>
+    <div className="my-4 grid grid-cols-3 items-center gap-3">
+      {volunteers.length === 0 ? (
+          // error handling in case of no volunteers
+        <div className="text-red-500"> No volunteers found</div>
+      ) : (
         volunteers.map((volunteer) => (
           <VolunteerInfoDisplay volunteer={volunteer} key={volunteer.id} />
-      )  ))}
-      </div>
+        ))
+      )}
+    </div>
    </div>
   );
 }
