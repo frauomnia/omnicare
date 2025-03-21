@@ -23,8 +23,8 @@ export default function Navbar() {
                             className="ml-4"
                         />
                         <Link className="ml-5 mt-5" href='/'>Home</Link>
-                        <Link className="ml-5 mt-5" href="/register/">Register</Link>
-                        <Link className="ml-5 mt-5" href="/log-in/">Log in</Link>
+                        {/* <Link className="ml-5 mt-5" href="/register/">Register</Link> */}
+                        {/* <Link className="ml-5 mt-5" href="/log-in/">Log in</Link> */}
                     </div>
                 </div>
             </div>
