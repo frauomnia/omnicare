@@ -2,19 +2,20 @@ import CommentsDisplay from '@/components/CommentsDisplay';
 import DeleteButton from '@/components/DeleteButton';
 import Navbar from '@/components/Navbar';
 import prisma from '@/lib/db/prisma';
+import { Metadata } from 'next';
 import Image from 'next/image'
 import { notFound } from 'next/navigation';
 
-interface VolunteerPageProps {
-    params: {
-        id: string;
-    }
-}
+// interface VolunteerPageProps {
+//     params: {
+//         id: string;
+//     }
+// }
 
 // @ts-ignore
-const VolunteerPage = async ({ params }: VolunteerPageProps) => {
+export default async function VolunteerPage({ params }: {params: Promise<{id: string}>}) {
     // @ts-ignore
-    const {id} = params; // @ts-ignore
+    const {id} = await params; // @ts-ignore
     const volunteer = await prisma.volunteer.findUnique({
         where: {id}
     })
@@ -61,4 +62,3 @@ const VolunteerPage = async ({ params }: VolunteerPageProps) => {
     )
 }
 
-export default VolunteerPage;
