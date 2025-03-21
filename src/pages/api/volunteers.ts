@@ -31,6 +31,7 @@ export default async function handler(req: { query: { medicalSpeciality: string;
       res.status(200).json(volunteersList);
     // catch error on issue when quering the database
     } catch (error) {
+      console.error(error);
       res.status(500).json({error: "Internal server error"});
     }
 }

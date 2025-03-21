@@ -10,6 +10,7 @@ export default async function handler(req: any, res: any) {
                 return res.status(200).json(volunteer);
         } catch (error )
  {
+    console.error(error);
     return res.status(500).json({error: "Internal server error"});
 
  }
@@ -20,6 +21,7 @@ export default async function handler(req: any, res: any) {
             await prisma.volunteer.delete({where: {id}})
                     return res.status(200).json({ message: "Success: volunteer deleted"});
                 } catch (error) {
+                    console.error(error);
                     return res.status(500).json({error: "Internal server error"});
                 }
     }
@@ -36,6 +38,7 @@ export default async function handler(req: any, res: any) {
             })
                     return res.status(200).json({ message: "Success: volunteer published"});
                 } catch (error) {
+                    console.error(error);
                     return res.status(500).json({error: "Internal server error"});
                 }
     }
