@@ -11,9 +11,10 @@ interface VolunteerPageProps {
     }
 }
 
-export default async function VolunteerPage( { params } : VolunteerPageProps) 
-{
-    const {id} = await params;
+// @ts-ignore
+const VolunteerPage = async ({ params }: VolunteerPageProps) => {
+    // @ts-ignore
+    const {id} = params; // @ts-ignore
     const volunteer = await prisma.volunteer.findUnique({
         where: {id}
     })
@@ -60,3 +61,4 @@ export default async function VolunteerPage( { params } : VolunteerPageProps)
     )
 }
 
+export default VolunteerPage;
