@@ -2,20 +2,12 @@ import CommentsDisplay from '@/components/CommentsDisplay';
 import DeleteButton from '@/components/DeleteButton';
 import Navbar from '@/components/Navbar';
 import prisma from '@/lib/db/prisma';
-import { Metadata } from 'next';
 import Image from 'next/image'
 import { notFound } from 'next/navigation';
 
-// interface VolunteerPageProps {
-//     params: {
-//         id: string;
-//     }
-// }
-
 // @ts-ignore
 export default async function VolunteerPage({ params }: {params: Promise<{id: string}>}) {
-    // @ts-ignore
-    const {id} = await params; // @ts-ignore
+    const {id} = await params; 
     const volunteer = await prisma.volunteer.findUnique({
         where: {id}
     })
@@ -41,16 +33,19 @@ export default async function VolunteerPage({ params }: {params: Promise<{id: st
                     Medical Speciality: {volunteer.medical_speciality}
                     </h2>
                     <h2 className="font-light text-[16] text-[#48752C]">
-                    First Language: {volunteer.first_language}
+                    First language: {volunteer.first_language}
                     </h2>
                     <h2 className="font-light text-[16] text-[#48752C]">
                     Home Country: {volunteer.home_country}
                     </h2>
                     <h2 className="font-light text-[16] text-[#48752C]">
-                    Country of Residence: {volunteer.country_residence}
+                    Host Country: {volunteer.country_residence}
                     </h2>
                     <h2 className="font-light text-[16] text-[#48752C]">
-                    Place of employment: {volunteer.place_employment}
+                    Curent Location: {volunteer.place_employment}
+                    </h2>
+                    <h2 className="font-light text-[16] text-[#48752C]">
+                    Clinic Address: {volunteer.clinic_address}
                     </h2>
                 </div>
                 {/* <DeleteButton volunteer={volunteer}/> */}
