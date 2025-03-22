@@ -31,10 +31,6 @@ model Feedback {
   volunteer   Volunteer?   @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
 }
 
-// Source: https://authjs.dev/getting-started/adapters/prisma
-
-// user auth
-
 enum UserRole {
   ADMIN
   USER
