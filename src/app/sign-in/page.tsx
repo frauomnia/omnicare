@@ -1,8 +1,13 @@
-"use client"
+"use server"
 
+import { auth } from "@/lib/auth";
 import Navbar from "../../components/Navbar";
+import { redirect
+ } from "next/navigation";
+export default async function SignIn() {
 
-export default function SignIn() {
+    const session = await auth();
+    if(session) redirect("/");
 
     // const handleSubmit = async (event: React.FormEvent) => {
     //     event.preventDefault();
