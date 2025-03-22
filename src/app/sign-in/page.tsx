@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import { signIn } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Navbar from "@/components/Navbar";
 
 export default function SignIn() {
     // const { data: session } = useSession();
@@ -21,13 +22,13 @@ export default function SignIn() {
 
         try {
             await signIn("credentials", formValues);
-            await redirect("/");
             } catch (error) {
             console.error(error);
         }
     }
     return(
         <div>
+            <Navbar />
             <div>
                 <h1 className="text-lg mb-5 mt-5 font-semibold">Register as a volunteer</h1>
                 <form onSubmit={handleSubmit}>

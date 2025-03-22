@@ -21,7 +21,6 @@ export const { auth, handlers } = NextAuth({ providers:
             if(!user) {
                 throw new Error("Invalid credentials")
             }
-
             return user;
         }
     })
