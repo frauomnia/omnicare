@@ -28,7 +28,7 @@ model Feedback {
   // title   String
   content String
   createdAt DateTime @default(now())
-  volunteer   Volunteer?   @relation(fields: [volunteerId], references: [id])
+  volunteer   Volunteer?   @relation(fields: [volunteerId], references: [id], onDelete: Cascade)
 }
 
 // Source: https://authjs.dev/getting-started/adapters/prisma
