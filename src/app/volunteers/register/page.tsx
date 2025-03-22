@@ -12,7 +12,7 @@ export default function AddVolunteerPage() {
         const formValues = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch("api/volunteers/register", {
+            const response = await fetch("/api/volunteers/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

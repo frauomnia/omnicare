@@ -42,7 +42,7 @@ return (
     <div className="carousel-item w-[100%] relative">
     <div className="absolute text-[#48752C] m-10 font-bold text-xl">
       <p>Our mission</p>
-      <p>Our goal is to help spread peace and love.</p>
+      <p>Our goal is to help refugees have a peaceful life again.</p>
     </div>
     <img
         src="/images/peace.jpg"
