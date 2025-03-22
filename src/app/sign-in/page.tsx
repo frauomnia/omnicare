@@ -1,63 +1,54 @@
-"use server"
+"use client"
 
 import { auth } from "@/lib/auth";
-import Navbar from "../../components/Navbar";
-import { redirect
- } from "next/navigation";
-export default async function SignIn() {
+import { signIn } from "next-auth/react";
+import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
 
-    const session = await auth();
-    if(session) redirect("/");
-
-    // const handleSubmit = async (event: React.FormEvent) => {
-    //     event.preventDefault();
-
-    //     const formData = new FormData(event.target as HTMLFormElement);
-    //     // transfer a list of key-value pairs into an object
-    //     const formValues = Object.fromEntries(formData.entries());
-
-    //     try {
-    //         const response = await fetch("api/volunteers/register", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify(formValues)
-    //         });
-
-    //         // const result = await response.json();
-
-    //         if(response.ok) {
-    //             window.location.href = "/";
-    //         }
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
+export default function SignIn() {
+    // const { data: session } = useSession();
+    
+    // if (session) {
+    //     redirect("/")
     // }
+
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target as HTMLFormElement);
+        // transfer a list of key-value pairs into an object
+        const formValues = Object.fromEntries(formData.entries());
+
+        try {
+            await signIn("credentials", formValues);
+            await redirect("/");
+            } catch (error) {
+            console.error(error);
+        }
+    }
     return(
         <div>
-            <Navbar />
             <div>
                 <h1 className="text-lg mb-5 mt-5 font-semibold">Register as a volunteer</h1>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input 
                         required
-                        name="user-name" 
-                        placeholder="user-name"
+                        name="name" 
+                        placeholder="name"
                         className="input input-bordered mb-3 w-1/2">
                     </input>
                     <br/>
                     <input 
                         required
                         name="email" 
-                        placeholder="emailaddress"
+                        placeholder="email"
                         className="input input-bordered mb-3 w-1/2">
                     </input>
                     <br/>
                     <input 
                         required
                         name="password" 
-                        placeholder="user-name"
+                        placeholder="password"
                         className="input input-bordered mb-3 w-1/2">
                     </input>
                     <br/>
