@@ -1,4 +1,5 @@
 "use client"
+
 import { Volunteer } from "@prisma/client";
 
 interface VolunteerInfoDisplayProps {
@@ -13,9 +14,7 @@ export default function PublishButton({volunteer}: VolunteerInfoDisplayProps) {
             const response = await fetch(`/api/volunteers/${volunteer.id}`, {
                 method: "PATCH",
             });
-    
-            // const result = await response.json();
-    
+        
             if(response.ok) {
                 window.location.href = "/";
             }

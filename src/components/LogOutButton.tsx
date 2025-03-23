@@ -1,9 +1,8 @@
 "use client"
 
 import { signOut } from "next-auth/react"
-import { redirect } from "next/dist/server/api-utils";
 
-export default function LogOutButton() {
+const LogOutButton = () => {
     const handleLogout = async () => {
         await signOut();
     }
@@ -15,5 +14,6 @@ export default function LogOutButton() {
         </div>
     )
 }
+export { LogOutButton }
 
 

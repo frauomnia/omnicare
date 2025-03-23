@@ -1,16 +1,17 @@
 "use client"
 
-import VolunteerInfoDisplay from "../../components/VolunteerInfoDisplay";
 import { useState, useEffect } from "react";
+import VolunteerInfoDisplay from "../../components/VolunteerInfoDisplay";
 import FilterSystem from "@/components/FilterSystem";
 import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export default function VolunteersList() {
   const [volunteers, setVolunteers] = useState<any[]>([]);
   const [medicalSpecialities, setMedicalSpecialities] = useState<string[]>([]);
   const [countries, setCountries] = useState<string[]>([]);
   const [places, setPlaces] = useState<string[]>([]);
   const [languages, setLanguages] = useState<string[]>([]);
+  const [isLoading, setLoading] = useState(true);
   const [selectedFilters, setSelectedFilters] = useState ({
     medicalSpeciality: '',
     country: '',
@@ -18,22 +19,17 @@ export default function Home() {
     language: '',
   });
 
-  // fetch filter options
   useEffect(() => {
-    async function fetchFilterOptions() {
-      try {
-        const response = await fetch('/api/filterOptions');
-        const data = await response.json();
-        setMedicalSpecialities(data.medicalSpecialities);
-        setCountries(data.countries);
-        setPlaces(data.places);
-        setLanguages(data.languages);
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    fetchFilterOptions();
-  }, []);
+    fetch('/api/filterOptions')
+    .then((res) => res.json()) 
+    .then((volunteers) => {
+      setMedicalSpecialities(volunteers.medicalSpecialities);
+      setCountries(volunteers.countries);
+      setPlaces(volunteers.places);
+      setLanguages(volunteers.languages);
+      setLoading(false);
+    })
+  }, [])
 
   // fetch filtered volunteers' list 
   useEffect(() => {

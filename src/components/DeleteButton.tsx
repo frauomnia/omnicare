@@ -1,4 +1,5 @@
 "use client"
+
 import { Volunteer } from "@prisma/client";
 
 interface VolunteerInfoDisplayProps {

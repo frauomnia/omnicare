@@ -3,15 +3,16 @@ import  { signIn }  from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
 
-export default async function SignIn() {
+const SignInPage = async () => {
+    
     const session = await auth();
-    if(session) redirect('/');
+    if(session) redirect('/volunteersList/');
 
     return(
         <div>
             <Navbar />
             <div>
-                <h1 className="text-lg mb-5 mt-5 font-semibold">Sign in</h1>
+                <p className="text-lg mb-5 mt-5 font-semibold">Sign in</p>
                 {/* <form onSubmit={handleSubmit}> */}
                <form action={
                 async(formData: FormData) => {
@@ -49,3 +50,5 @@ export default async function SignIn() {
         </div>
     )
 }
+
+export default SignInPage;

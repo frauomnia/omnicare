@@ -1,32 +1,39 @@
 "use client"
+
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import DeleteButton from "@/components/DeleteButton";
 import PublishButton from "@/components/PublishButton";
 import Link from "next/link";
 
-export default function Home() {
+export default function AdminPage() {
   const [volunteers, setVolunteers] = useState<any[]>([]);
-  const [selectedFilters, setSelectedFilters] = useState ({
-    medicalSpeciality: '',
-    country: '',
-    place: '',
-    language: ''
-  });
+  const [isLoading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   async function fetchVolunteers() {
+  //     try {
+  //       const response = await fetch('/api/volunteers');
+  //       const data = await response.json();
+  //       setVolunteers(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   }
+  //   fetchVolunteers();
+  // }, []);
 
   useEffect(() => {
-    async function fetchVolunteers() {
-      try {
-        const response = await fetch(`/api/volunteers?medicalSpeciality=${selectedFilters.medicalSpeciality}&country=${selectedFilters.country}&place=${selectedFilters.place}&language=${selectedFilters.language}`);
-        const data = await response.json();
-        setVolunteers(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchVolunteers();
-    // re-fetch volunteers' list on filter change
-  }, [selectedFilters]);
+    fetch('/api/volunteers')
+    .then((res) => res.json())
+    .then((volunteers) => {
+      setVolunteers(volunteers);
+      setLoading(false);
+    })
+  }, [])
+
+  if (isLoading) return <p>Loading...</p>
+  if (!volunteers) return <p>No Volunteers found</p>
 
   return (
    <div>
