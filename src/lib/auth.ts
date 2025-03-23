@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import { prisma } from "./db/prisma"
+import prisma  from "./db/prisma"
 
 export const { auth, handlers, signIn, signOut } = NextAuth({ providers: 
     

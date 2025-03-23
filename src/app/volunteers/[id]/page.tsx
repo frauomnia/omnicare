@@ -1,13 +1,16 @@
 import CommentsDisplay from '@/components/CommentsDisplay';
 import DeleteButton from '@/components/DeleteButton';
 import Navbar from '@/components/Navbar';
-import {prisma} from '@/lib/db/prisma';
-import Image from 'next/image'
+import prisma from '@/lib/db/prisma';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-// @ts-ignore
-export default async function VolunteerPage({ params }: {params: Promise<{id: string}>}) {
-    const {id} = await params; 
+interface VolunteerPageProps {
+    params: {id : string}
+}
+
+export default async function VolunteerPage({ params }: VolunteerPageProps) {
+    const {id} = params; 
     const volunteer = await prisma.volunteer.findUnique({
         where: {id}
     })

@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 const SignInPage = async () => {
     
     const session = await auth();
-    if(session) redirect('/volunteersList/');
+    if(session) redirect('/');
 
     return(
         <div>

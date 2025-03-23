@@ -10,19 +10,6 @@ export default function AdminPage() {
   const [volunteers, setVolunteers] = useState<any[]>([]);
   const [isLoading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   async function fetchVolunteers() {
-  //     try {
-  //       const response = await fetch('/api/volunteers');
-  //       const data = await response.json();
-  //       setVolunteers(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  //   fetchVolunteers();
-  // }, []);
-
   useEffect(() => {
     fetch('/api/volunteers')
     .then((res) => res.json())

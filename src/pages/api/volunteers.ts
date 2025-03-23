@@ -1,4 +1,4 @@
-import {prisma} from "@/lib/db/prisma";
+import prisma from "@/lib/db/prisma";
 
 export default async function handler(req: { query: { medicalSpeciality: string; country: string; place: string; language: string;}; }, res: any) {
     const { medicalSpeciality, country, place, language} = req.query;

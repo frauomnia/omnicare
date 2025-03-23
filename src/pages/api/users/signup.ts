@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db/prisma";
+import prisma from "@/lib/db/prisma";
 import bcrypt from "bcryptjs"; 
 import { redirect } from "next/dist/server/api-utils";
 
