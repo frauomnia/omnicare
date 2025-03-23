@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import DeleteUserButton from "@/components/DeleteUserButton";
 import MakeAdminButton from "@/components/MakeAdminButton";
-import Link from "next/link";
 import Footer from "@/components/Footer";
 
 export default function AdminUsersPage() {
@@ -32,13 +31,13 @@ export default function AdminUsersPage() {
             <thead>
                 <tr>
                     <th className="p-4 border-b border-[#F1E6D0] bg-blue-gray-50">
-                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">User</p>
+                        <p className="block font-sans text-base antialiased font-bold leading-none text-[#F1E6D0] opacity-70">User</p>
                     </th>
                     <th className="p-4 border-b border-[#F1E6D0] bg-blue-gray-50">
-                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Make Admin</p>
+                        <p className="block font-sans text-base antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Make Admin</p>
                     </th>
                     <th className="p-4 border-b border-[#F1E6D0] bg-blue-gray-50">
-                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Delete</p>
+                        <p className="block font-sans text-base antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Delete</p>
                     </th>
                 </tr>
             </thead>
@@ -46,17 +45,18 @@ export default function AdminUsersPage() {
             {
               users.map((user) => (
               <tr key={user.id}>
-                  <td className="p-4 border-b border-blue-gray-50">
-                      <p className="w-fit block p-2 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">{user.name}</p>
-                      <small> {user.email} </small>
-                      <small> {user.role} </small>
+                  <td className="p-3">
+                      <p className="w-fit p-2 text-base antialiased font-bold leading-normal text-[#F1E6D0] ">{user.name}</p>
+                      <small> Email: {user.email} </small>
+                      <br />
+                      <small> Role: {user.role} </small>
                   </td>
-                  <td className="p-4 border-b border-blue-gray-50">
-                      <DeleteUserButton user={user} />
-                  </td> 
-                  <td className="p-4 border-b border-blue-gray-50">
+                  <td className="p-3">
                       <MakeAdminButton user={user} />
                   </td>
+                  <td className="p-3">
+                      <DeleteUserButton user={user} />
+                  </td> 
               </tr>
             ))}
             </tbody>

@@ -18,7 +18,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "bcryptjs": "^2.4.3",
-    "daisyui": "^4.12.20",
+    "daisyui": "v4.12.7",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "eslint-config-prettier": "^9.1.0",

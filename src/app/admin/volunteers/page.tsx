@@ -46,15 +46,16 @@ export default function AdminVolunteersPage() {
             {
               volunteers.length > 0 && volunteers.map((volunteer) => (
               <tr key={volunteer.id}>
-                  <td className="p-4 border-b border-blue-gray-50">
-                    <Link href={`/volunteers/` + volunteer.id} >
-                      <p className="btn w-fit block p-2 font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">{volunteer.first_name + " " + volunteer.last_name}</p>
-                    </Link>
+                  <td className="p-3 border-b border-blue-gray-50">
+                    <p className="w-fit font-sans text-base antialiased font-bold leading-normal text-[#F1E6D0]">{volunteer.first_name + " " + volunteer.last_name}</p>
+                    <Link href={`/volunteers/` + volunteer.id}>
+                      <small className="underline">View</small>
+                      </Link>
                   </td>
-                  <td className="p-4 border-b border-blue-gray-50">
+                  <td className="p-3 border-b border-blue-gray-50">
                       <DeleteButton volunteer={volunteer} />
                   </td>
-                  <td className="p-4 border-b border-blue-gray-50">
+                  <td className="p-3 border-b border-blue-gray-50">
                       <PublishButton volunteer={volunteer} />
                   </td>
               </tr>

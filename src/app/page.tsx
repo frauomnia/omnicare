@@ -12,6 +12,7 @@ export default async function Home() {
 
   const session = await auth();
   
+  // match email coming from session with db to get user role
   const userDB = await prisma.user.findFirst({
     where: {
       email: session?.user?.email
@@ -23,12 +24,12 @@ export default async function Home() {
       <Navbar />
       {
         session? (
-          <div>
-            <div> Signed in as: {session.user?.name}</div>
+          <div className="flex flex-row-reverse">
             <LogOutButton />
+            <div className="text-lg font-extrabold text-[#48752C] mr-5"> Welcome {session.user?.name}!</div>
           </div>
         ): (
-          <Link className="font-bold text-base" href="/sign-in/">Sign in</Link>
+          <Link className="underline text-base font-bold text-[#48752C]" href="/sign-in/">Log in</Link>
         )
       }
       <div className="flex flex-col">

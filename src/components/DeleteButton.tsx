@@ -26,7 +26,7 @@ export default function DeleteButton({volunteer}: VolunteerInfoDisplayProps) {
     }
     return(
        <>
-        <button onClick={handleDelete} className="btn">
+        <button onClick={handleDelete} className="btn border-2 border-[#48752C] text-[#48752C] bg-[#F1E6D0] shadow-md">
             Delete
         </button>
        </>

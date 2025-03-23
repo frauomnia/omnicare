@@ -25,7 +25,7 @@ export default function MakeAdminButton({user}: UsersProps) {
     return(
        <>
         <button onClick={handlePublish}
-        className="btn">
+        className="btn border-2 border-[#48752C] text-[#48752C] bg-[#F1E6D0] shadow-md">
                 Make Admin
         </button>
        </>
