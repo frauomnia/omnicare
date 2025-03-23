@@ -1,5 +1,6 @@
 "use client"
 
+import Navbar from "@/components/Navbar";
 import { redirect } from "next/navigation";
 // import { useSession } from "next-auth/react";
 
@@ -20,12 +21,6 @@ export default function SignUp() {
                 },
                 body: JSON.stringify(formValues)
             });
-
-            // const result = await response.json();
-
-            if(response.ok) {
-                redirect("/");
-            }
         }  
             catch (error) {
             console.error(error);
@@ -33,8 +28,9 @@ export default function SignUp() {
     }
     return(
         <div>
+            <Navbar />
             <div>
-                <h1 className="text-lg mb-5 mt-5 font-semibold">Register as a volunteer</h1>
+                <h1 className="text-lg mb-5 mt-5 font-semibold">Sign up</h1>
                 <form onSubmit={handleSubmit}>
                     <input 
                         required

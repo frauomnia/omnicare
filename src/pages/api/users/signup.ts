@@ -7,8 +7,7 @@ export default async function handler(req: any, res: any) {
         const {
             name,
             email,
-            password,
-            role
+            password
         } = req.body;
         // const salt = bcrypt.genSaltSync(10);
         // const hash = bcrypt.hashSync(password, salt);
@@ -16,8 +15,7 @@ export default async function handler(req: any, res: any) {
         if (
             !name ||
             !email ||
-            !password ||
-            !role
+            !password 
         ) {
             return res.status(400).json({error: "Missing required data"});
             }
@@ -25,17 +23,13 @@ export default async function handler(req: any, res: any) {
                 data: {
                     name,
                     email,
-                    password,
-                    role
+                    password
                 }
             });
+         
             return res.status(201).json({ message: "Success: user created"});
 
     } catch (error) {
         return res.status(500).json({error: "Internal server error"});
     }
-
-
-
-
 }
