@@ -20,6 +20,7 @@ export default async function Home() {
         session? (
           <div>
           <div> Signed in as: {session.user?.name}</div>
+          <div> You are a: {session.user?.email}</div>
           <LogOutButton />
           </div>
         ): (

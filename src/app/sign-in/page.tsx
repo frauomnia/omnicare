@@ -1,37 +1,25 @@
-"use client"
 
 import { auth } from "@/lib/auth";
-import { signIn } from "next-auth/react";
+import  { signIn }  from "@/lib/auth";
 import { redirect } from "next/navigation";
-import { useSession } from "next-auth/react";
 import Navbar from "@/components/Navbar";
 
-export default function SignIn() {
-    // const { data: session } = useSession();
-    
-    // if (session) {
-    //     redirect("/")
-    // }
+export default async function SignIn() {
+    const session = await auth();
+    if(session) redirect('/');
 
-    const handleSubmit = async (event: React.FormEvent) => {
-        event.preventDefault();
-
-        const formData = new FormData(event.target as HTMLFormElement);
-        // transfer a list of key-value pairs into an object
-        const formValues = Object.fromEntries(formData.entries());
-
-        try {
-            await signIn("credentials", formValues);
-            } catch (error) {
-            console.error(error);
-        }
-    }
     return(
         <div>
             <Navbar />
             <div>
-                <h1 className="text-lg mb-5 mt-5 font-semibold">Register as a volunteer</h1>
-                <form onSubmit={handleSubmit}>
+                <h1 className="text-lg mb-5 mt-5 font-semibold">Sign in</h1>
+                {/* <form onSubmit={handleSubmit}> */}
+               <form action={
+                async(formData: FormData) => {
+                    "use server"
+                await signIn('credentials', formData)
+               }}
+               >
                     <input 
                         required
                         name="name" 

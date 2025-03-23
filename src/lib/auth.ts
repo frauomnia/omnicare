@@ -1,13 +1,15 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import { prisma } from "./db/prisma"
-export const { auth, handlers } = NextAuth({ providers: 
+
+export const { auth, handlers, signIn, signOut } = NextAuth({ providers: 
     
     [Credentials({
         credentials: {
             email: {},
             password: {},
-            name: {}
+            name: {},
+            role: {}
         },
         authorize: async (credentials) => {
 
@@ -15,7 +17,8 @@ export const { auth, handlers } = NextAuth({ providers:
                 where: {
                     name: credentials.name!,
                     email: credentials.email!,
-                    password: credentials.password!
+                    password: credentials.password!,
+                    role: credentials.role!
                 }
             })
             if(!user) {

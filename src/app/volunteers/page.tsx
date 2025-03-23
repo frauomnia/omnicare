@@ -3,7 +3,6 @@ import VolunteerInfoDisplay from "../../components/VolunteerInfoDisplay";
 import { useState, useEffect } from "react";
 import FilterSystem from "@/components/FilterSystem";
 import Navbar from "@/components/Navbar";
-import Link from "next/link";
 
 export default function Home() {
   const [volunteers, setVolunteers] = useState<any[]>([]);
@@ -56,32 +55,11 @@ export default function Home() {
       [filter]: value,
     }));
   }
-
-  const fullUser = null;
-
   return (
    <div>
       <Navbar />
       {/* user signin/signup buttons */}
       <div>
-      {
-        fullUser == null ? (
-          <div>
-              <Link href='/sign-in'>
-                sign in
-              </Link>
-              <Link href='/sign-up'>
-                sign up
-              </Link>
-          </div>
-        ) : (
-          <div>
-            None exist
-            {/* {fullUser.role === "admin" && (
-              <Link href="adminpage"></Link>
-            )} */}
-          </div>
-        )}
       </div>
 
       <FilterSystem 

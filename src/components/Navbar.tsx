@@ -26,7 +26,7 @@ export default function Navbar() {
                         />
                         <Link className="ml-5 mt-5" href='/'>Home</Link>
                         <Link className="ml-5 mt-5" href="/admin/">Admin view</Link>
-                        <Link className="ml-5 mt-5" href="/sign-in/">Log in</Link>
+                        {/* <Link className="ml-5 mt-5" href="/sign-in/">Log in</Link> */}
                     </div>
                 </div>
             </div>
