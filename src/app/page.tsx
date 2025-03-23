@@ -25,10 +25,10 @@ export default async function Home() {
         )
       }
       <div className="flex flex-col">
-        <div className="w-[30%] mt-5 ml-auto mr-auto bg-[#F1E6D0] text-[#48752C] border-[#48752C] border-2 rounded-md">
+        <div className="w-[30%] text-center mt-5 ml-auto mr-auto bg-[#F1E6D0] text-[#48752C] border-[#48752C] border-2 rounded-md">
           <Link className="font-bold text-base" href="/volunteersList/">Find your doctor</Link>
         </div>
-        <div className="w-[30%] mt-5 ml-auto mr-auto bg-[#F1E6D0] text-[#48752C] border-[#48752C] border-2 rounded-md">
+        <div className="w-[30%] text-center mt-5 ml-auto mr-auto bg-[#F1E6D0] text-[#48752C] border-[#48752C] border-2 rounded-md">
           <Link className="font-bold text-base" href="/register/">Register as volunteer</Link>
         </div>
         <CarouselDisplay />
