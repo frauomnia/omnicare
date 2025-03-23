@@ -2,6 +2,7 @@ import { auth } from "@/lib/auth";
 import  { signIn }  from "@/lib/auth";
 import { redirect } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const SignInPage = async () => {
     
@@ -47,6 +48,7 @@ const SignInPage = async () => {
                     </button>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }

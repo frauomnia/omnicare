@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import VolunteerInfoDisplay from "../../components/VolunteerInfoDisplay";
 import FilterSystem from "@/components/FilterSystem";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function VolunteersList() {
   const [volunteers, setVolunteers] = useState<any[]>([]);
@@ -80,6 +81,7 @@ export default function VolunteersList() {
           ))
         )}
       </div>
+      <Footer />
    </div>
   );
 }

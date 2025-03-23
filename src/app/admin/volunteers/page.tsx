@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import DeleteButton from "@/components/DeleteButton";
 import PublishButton from "@/components/PublishButton";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function AdminVolunteersPage() {
   const [volunteers, setVolunteers] = useState<any[]>([]);
@@ -61,6 +62,7 @@ export default function AdminVolunteersPage() {
             </tbody>
         </table>
       </div>
+      <Footer />
    </div>
   );
 }

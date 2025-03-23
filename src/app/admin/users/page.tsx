@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import DeleteUserButton from "@/components/DeleteUserButton";
 import MakeAdminButton from "@/components/MakeAdminButton";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function AdminUsersPage() {
   const [users, setUsers] = useState<any[]>([]);
@@ -61,6 +62,7 @@ export default function AdminUsersPage() {
             </tbody>
         </table>
       </div>
+      <Footer />
    </div>
   );
 }

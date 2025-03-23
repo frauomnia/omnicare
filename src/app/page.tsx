@@ -6,6 +6,7 @@ import { auth } from "@/lib/auth";
 import Link from "next/link";
 import { LogOutButton } from "@/components/LogOutButton";
 import prisma from "@/lib/db/prisma";
+import Footer from "@/components/Footer";
 
 export default async function Home() {
 
@@ -54,6 +55,7 @@ export default async function Home() {
         </div>
         <CarouselDisplay />
       </div>
+      <Footer />
    </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function SignUp() {
@@ -57,6 +58,7 @@ export default function SignUp() {
                     </button>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }

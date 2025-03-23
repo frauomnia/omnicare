@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 
 export default function AddVolunteerPage() {
@@ -97,6 +98,7 @@ export default function AddVolunteerPage() {
                     </button>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }

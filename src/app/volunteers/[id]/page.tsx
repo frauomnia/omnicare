@@ -1,5 +1,6 @@
 import CommentsDisplay from '@/components/CommentsDisplay';
 import DeleteButton from '@/components/DeleteButton';
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import prisma from '@/lib/db/prisma';
 import Image from 'next/image';
@@ -56,6 +57,7 @@ export default async function VolunteerPage({ params }: VolunteerPageProps) {
             <div className='ml-auto mr-auto w-1/2 mt-5'>
                 <CommentsDisplay volunteer={volunteer} />
             </div>
+            <Footer />
         </div> 
     )
 }
