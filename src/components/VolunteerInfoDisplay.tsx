@@ -1,3 +1,6 @@
+
+import * as React from "react"
+
 import { Volunteer } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +12,7 @@ interface VolunteerInfoDisplayProps {
 export default function VolunteerInfoDisplay({volunteer}: VolunteerInfoDisplayProps) {
     return(
         <Link href={`/volunteers/` + volunteer.id} 
+        title="valunteerList"
         className="card w-{70%} bg-[#F1E6D0] border-[#48752C] hover:shadow-xl">
             <figure>
                 <Image 
@@ -19,10 +23,11 @@ export default function VolunteerInfoDisplay({volunteer}: VolunteerInfoDisplayPr
                 />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">
+                <h2 title="volunteerName" className="card-title">
+                    
                     {volunteer.first_name + " " + volunteer.last_name}
                 </h2>
-                <h3>{volunteer.medical_speciality}</h3>
+                <h3 title="medical_speciality">{volunteer.medical_speciality}</h3>
             </div>
         </Link>
     )
