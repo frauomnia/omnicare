@@ -1,11 +1,12 @@
 "use client"
 
+import * as React from "react"
 import { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import DeleteButton from "@/components/DeleteButton";
-import PublishButton from "@/components/PublishButton";
+import Navbar from "../../../components/Navbar";
+import DeleteButton from "../../../components/DeleteButton";
+import PublishButton from "../../../components/PublishButton";
 import Link from "next/link";
-import Footer from "@/components/Footer";
+import Footer from "../../../components/Footer";
 
 export default function AdminVolunteersPage() {
   const [volunteers, setVolunteers] = useState<any[]>([]);

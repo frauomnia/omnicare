@@ -1,5 +1,7 @@
 "use client"
 
+import * as React from "react"
+
 interface FilterProps {
     medicalSpecialities: string[];
     countries: string[];
@@ -31,7 +33,7 @@ export default function FilterSystem(
                     value={selectedFilters.medicalSpeciality}
                     onChange={(e) => onFilterChange("medicalSpeciality", e.target.value)}
                     >
-                        <option value="">Medical speciality</option>
+                        <option value="medicalSpeciality">Medical speciality</option>
                         {medicalSpecialities.map((medicalSpeciality) => (
                             <option key={medicalSpeciality} value={medicalSpeciality}>{medicalSpeciality}</option>
                         ))}
@@ -56,7 +58,7 @@ export default function FilterSystem(
                     value={selectedFilters.country}
                     onChange={(e) => onFilterChange("country", e.target.value)}
                     >
-                        <option value="">Home country</option>
+                        <option value="homeCountry">Home country</option>
                         {countries.map((country) => (
                             <option key={country} value={country} >{country}</option>
                         ))}
@@ -69,7 +71,7 @@ export default function FilterSystem(
                         value={selectedFilters.place}
                         onChange={(e) => onFilterChange("place", e.target.value)}
                         >
-                            <option value="">City</option>
+                            <option value="city">City</option>
                             {places.map((place) => (
                                 <option key={place} value={place} >{place}</option>
                             ))}
@@ -82,7 +84,7 @@ export default function FilterSystem(
                         value={selectedFilters.language}
                         onChange={(e) => onFilterChange("language", e.target.value)}
                         >
-                            <option value="">Language</option>
+                            <option value="language">Language</option>
                             {languages.map((language) => (
                                 <option key={language} value={language} >{language}</option>
                             ))}
