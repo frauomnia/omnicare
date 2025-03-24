@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import { auth } from "@/lib/auth";
 
 import Link from "next/link";
-import { LogOutButton } from "@/components/LogOutButton";
+import LogOutButton from "@/components/LogOutButton";
 import Footer from "@/components/Footer";
 
 export default async function AdminPage() {

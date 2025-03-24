@@ -4,7 +4,7 @@ import CarouselDisplay from "@/components/CarouselDisplay";
 import Navbar from "@/components/Navbar";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
-import { LogOutButton } from "@/components/LogOutButton";
+import LogOutButton from "@/components/LogOutButton";
 import prisma from "@/lib/db/prisma";
 import Footer from "@/components/Footer";
 

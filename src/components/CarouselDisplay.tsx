@@ -1,5 +1,5 @@
 "use client"
-
+import * as React from "react"
 export default function CarouselDisplay() {
 
 return (
@@ -12,7 +12,8 @@ return (
       </div>
       <img
         src="/images/avocado.jpg"
-        className="rounded-box" />
+        className="rounded-box"
+        alt="cute avocado with a smile" />
     </div>
     <div className="carousel-item w-[100%] relative">
     <div className="absolute text-[#48752C] m-10 font-bold text-xl">
@@ -21,7 +22,8 @@ return (
     </div>
     <img
       src="/images/one-finger.jpg"
-      className="rounded-box" />
+      className="rounded-box"
+      alt="a hand with yellow background" />
     </div>
     <div className="carousel-item w-[100%] relative">
     <div className="absolute text-[#48752C] m-10 font-bold text-xl">
@@ -30,7 +32,8 @@ return (
     </div>
     <img
       src="/images/two-thumbs.jpg"
-      className="rounded-box" />
+      className="rounded-box"
+      alt="a hand with two fingers and yellow background" />
     </div>
     <div className="carousel-item w-[100%] relative">
     <div className="absolute text-[#48752C] m-10 font-bold text-xl">
@@ -39,7 +42,8 @@ return (
       </div>
       <img
         src="/images/power.jpg "
-        className="rounded-box" />
+        className="rounded-box"
+        alt="a fist with yellow background" />
     </div>
     <div className="carousel-item w-[100%] relative">
     <div className="absolute text-[#48752C] m-10 font-bold text-xl">
@@ -48,7 +52,8 @@ return (
     </div>
     <img
         src="/images/peace.jpg"
-        className="rounded-box" />
+        className="rounded-box"
+        alt="a hand with peace sign with yellow background" />
     </div>
   </div>
 )
