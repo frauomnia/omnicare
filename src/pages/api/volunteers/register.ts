@@ -11,7 +11,8 @@ export default async function handler(req: any, res: any) {
             country_residence, 
             place_employment, 
             medical_speciality,
-            clinic_address} = req.body;
+            clinic_address,
+            opening_time} = req.body;
 
         //check if any of the required fields are missing
         if (
@@ -22,7 +23,8 @@ export default async function handler(req: any, res: any) {
             !country_residence || 
             !place_employment || 
             !medical_speciality ||
-            !clinic_address)
+            !clinic_address ||
+            !opening_time)
         {
             return res.status(400).json({ error: "Missing required data" });
         } 
@@ -35,7 +37,8 @@ export default async function handler(req: any, res: any) {
                     country_residence, 
                     place_employment, 
                     medical_speciality,
-                    clinic_address},
+                    clinic_address, 
+                    opening_time },
              });
             
             return res.status(201).json({ message: "Success: volunteer added"});

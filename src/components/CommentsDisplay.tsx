@@ -64,7 +64,7 @@ export default function CommentsDisplay({volunteer}: VolunteerInfoDisplayProps) 
                         onChange={(e) => setNewComment(e.target.value)}
                         placeholder='Give feedback here...'
                     />
-                    <button type='submit' className='btn'>
+                    <button type='submit' className="btn bg-[#48752C] mb-5 ml-auto mr-auto text-[#F1E6D0]">
                         Give feedback
                     </button>
                 </form>

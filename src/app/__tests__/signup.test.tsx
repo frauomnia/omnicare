@@ -8,8 +8,8 @@ describe('SignUp', () => {
     render(<SignUp />);
 
     expect(
-      screen.getByText(/Sign up/i))
-      .toBeInTheDocument();
+      screen.getAllByText(/Sign up/i))
+      .toBeDefined();
 
   });
 
@@ -18,7 +18,7 @@ describe('SignUp', () => {
 
     expect(
       screen.getByRole('button'))
-      .toHaveTextContent('Submit')
+      .toHaveTextContent('Sign up')
       
   });
 

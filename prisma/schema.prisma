@@ -17,6 +17,7 @@ model Volunteer {
   last_name         String
   medical_speciality String
   clinic_address    String 
+  opening_time      String
   published         Boolean? @default(false) 
   feeback Feedback[]
   @@map("volunteers")

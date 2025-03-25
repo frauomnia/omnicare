@@ -92,6 +92,13 @@ export default function AddVolunteerPage() {
                         className="input input-bordered mb-3">
                     </input>
                     <br/>
+                    <input 
+                        required
+                        name="opening_time" 
+                        placeholder="opening time"
+                        className="input input-bordered mb-3">
+                    </input>
+                    <br/>
                     <button
                     type="submit"
                     className="btn bg-[#48752C] mb-5 ml-auto mr-auto text-[#F1E6D0]">Submit

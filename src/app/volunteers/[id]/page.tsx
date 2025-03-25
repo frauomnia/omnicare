@@ -51,8 +51,10 @@ export default async function VolunteerPage({ params }: VolunteerPageProps) {
                     <h2 className="font-light text-[16] text-[#48752C]">
                     Clinic Address: {volunteer.clinic_address}
                     </h2>
+                    <h2 className="font-light text-[16] text-[#48752C]">
+                    Opening hours: {volunteer.opening_time}
+                    </h2>
                 </div>
-                <DeleteButton volunteer={volunteer}/>
             </div>
             <div className='ml-auto mr-auto w-1/2 mt-5'>
                 <CommentsDisplay volunteer={volunteer} />

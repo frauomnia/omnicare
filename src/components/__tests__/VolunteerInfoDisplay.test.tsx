@@ -17,6 +17,7 @@ describe('VolunteerInfoDisplay component', () => {
       last_name: 'M',
       medical_speciality: 'Internal',
       clinic_address: 'street 1',
+      opening_time: '9 AM - 17 PM',
       published: true 
     }} />);
 
@@ -37,6 +38,7 @@ describe('VolunteerInfoDisplay component', () => {
         last_name: 'M',
         medical_speciality: 'Internal',
         clinic_address: 'street 1',
+        opening_time: '9 AM - 17 PM',
         published: true 
       }} />);
   

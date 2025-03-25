@@ -33,7 +33,7 @@ export default function FilterSystem(
                     value={selectedFilters.medicalSpeciality}
                     onChange={(e) => onFilterChange("medicalSpeciality", e.target.value)}
                     >
-                        <option value="medicalSpeciality">Medical speciality</option>
+                        <option value="medicalSpeciality">Medical speciality &#8897;</option>
                         {medicalSpecialities.map((medicalSpeciality) => (
                             <option key={medicalSpeciality} value={medicalSpeciality}>{medicalSpeciality}</option>
                         ))}
@@ -58,7 +58,7 @@ export default function FilterSystem(
                     value={selectedFilters.country}
                     onChange={(e) => onFilterChange("country", e.target.value)}
                     >
-                        <option value="homeCountry">Home country</option>
+                        <option value="homeCountry">Home country &#8897;</option>
                         {countries.map((country) => (
                             <option key={country} value={country} >{country}</option>
                         ))}
@@ -71,7 +71,7 @@ export default function FilterSystem(
                         value={selectedFilters.place}
                         onChange={(e) => onFilterChange("place", e.target.value)}
                         >
-                            <option value="city">City</option>
+                            <option value="city">City &#8897;</option>
                             {places.map((place) => (
                                 <option key={place} value={place} >{place}</option>
                             ))}
@@ -84,7 +84,7 @@ export default function FilterSystem(
                         value={selectedFilters.language}
                         onChange={(e) => onFilterChange("language", e.target.value)}
                         >
-                            <option value="language">Language</option>
+                            <option value="language">Language &#8897;</option>
                             {languages.map((language) => (
                                 <option key={language} value={language} >{language}</option>
                             ))}
