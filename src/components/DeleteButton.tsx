@@ -1,7 +1,6 @@
 "use client"
 
 import { Volunteer } from "@prisma/client";
-import { redirect } from "next/navigation";
 
 interface VolunteerInfoDisplayProps {
     volunteer: Volunteer;
