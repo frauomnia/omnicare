@@ -16,7 +16,7 @@ export default function MakeAdminButton({user}: UsersProps) {
             });
         
             if(response.ok) {
-                window.location.href = "/";
+                window.location.href = "/admin/users/";
             }
         } catch (error) {
             console.error(error);

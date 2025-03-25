@@ -1,6 +1,7 @@
 "use client"
 
 import { Volunteer } from "@prisma/client";
+import { redirect } from "next/navigation";
 
 interface VolunteerInfoDisplayProps {
     volunteer: Volunteer;
@@ -18,7 +19,7 @@ export default function DeleteButton({volunteer}: VolunteerInfoDisplayProps) {
             // const result = await response.json();
             
             if(response.ok) {
-                window.location.href = "/";
+                window.location.href = "/admin/volunteers/";
             }
         } catch (error) {
             console.error(error);

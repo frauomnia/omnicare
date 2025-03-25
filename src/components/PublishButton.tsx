@@ -16,7 +16,7 @@ export default function PublishButton({volunteer}: VolunteerInfoDisplayProps) {
             });
         
             if(response.ok) {
-                window.location.href = "/";
+                window.location.href = "/admin/volunteers/";
             }
         } catch (error) {
             console.error(error);
