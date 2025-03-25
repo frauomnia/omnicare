@@ -40,18 +40,6 @@ export default function FilterSystem(
                     </select>
                 </div>
                 <div>
-                    {/* {countries.map((country)=> (
-                        <label key={country}>
-                            <input 
-                            type="radio"
-                            name="country"
-                            value={country}
-                            checked={selectedFilters.country === country}
-                            onChange={() => onFilterChange("country", country)}
-                            />
-                            {country}
-                        </label>
-                    ))} */}
                     <select
                     className="bg-[#48752C] text-[#F1E6D0] placeholder:text-[#F1E6D0] text-sm font-bold border border-[#F1E6D0] rounded pl-3 pr-10 py-2 transition duration-300 ease focus:outline-none focus:border-[#F1E6D0] hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer"
                     name="country"

@@ -38,16 +38,16 @@ describe('FilterSystem component', () => {
       } }  />);
 
     // check that the select options/filters are rendered properly
-    const medicalSpeciality = screen.getByText('Medical speciality');
+    const medicalSpeciality = screen.getByText('Medical speciality ⋁');
     expect(medicalSpeciality).toHaveAttribute('value', 'medicalSpeciality');
 
-    const homeCountry = screen.getByText('Home country');
+    const homeCountry = screen.getByText('Home country ⋁');
     expect(homeCountry).toHaveAttribute('value', 'homeCountry');
 
-    const city = screen.getByText('City');
+    const city = screen.getByText('City ⋁');
     expect(city).toHaveAttribute('value', 'city');
 
-    const language = screen.getByText('Language');
+    const language = screen.getByText('Language ⋁');
     expect(language).toHaveAttribute('value', 'language');
   });
 
