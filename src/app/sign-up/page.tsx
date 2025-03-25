@@ -29,33 +29,33 @@ export default function SignUp() {
     return(
         <div>
             <Navbar />
-            <div>
+            <div className="flex flex-col w-[50%] items-center text-[#48752C] mt-5 ml-auto mr-auto bg-[#F1E6D0] rounded-xl">
                 <h1 className="text-lg mb-5 mt-5 font-semibold">Sign up</h1>
                 <form onSubmit={handleSubmit}>
                     <input 
                         required
                         name="name" 
                         placeholder="name"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="email" 
                         placeholder="email"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="password" 
                         placeholder="password"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <button
                     type="submit"
-                    className="btn">Submit
+                    className="btn bg-[#48752C] mb-5 ml-auto mr-auto text-[#F1E6D0]">Sign up
                     </button>
                 </form>
             </div>

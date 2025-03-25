@@ -22,8 +22,6 @@ export default function AddVolunteerPage() {
                 body: JSON.stringify(formValues)
             });
 
-            // const result = await response.json();
-
             if(response.ok) {
                 window.location.href = "/";
             }
@@ -34,68 +32,69 @@ export default function AddVolunteerPage() {
     return(
         <div>
             <Navbar />
-            <div>
+            <div className="flex flex-col w-[50%] items-center text-[#48752C] mt-5 ml-auto mr-auto bg-[#F1E6D0] rounded-xl">
                 <h1 className="text-lg mb-5 mt-5 font-semibold">Register as a volunteer</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} 
+                className="">
                     <input 
                         required
                         name="first_name" 
                         placeholder="first name"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="last_name" 
                         placeholder="last name"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="first_language" 
                         placeholder="first language"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="home_country" 
                         placeholder="home country"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="country_residence" 
                         placeholder="country of residence"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="place_employment" 
                         placeholder="place of employment"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="medical_speciality" 
                         placeholder="medical speciality"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <input 
                         required
                         name="clinic_address" 
                         placeholder="clinic address"
-                        className="input input-bordered mb-3 w-1/2">
+                        className="input input-bordered mb-3">
                     </input>
                     <br/>
                     <button
                     type="submit"
-                    className="btn">Submit
+                    className="btn bg-[#48752C] mb-5 ml-auto mr-auto text-[#F1E6D0]">Submit
                     </button>
                 </form>
             </div>
