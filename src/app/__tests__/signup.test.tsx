@@ -1,7 +1,6 @@
 import * as React from "react"
 import SignUp  from '../sign-up/page';
 import { render, screen } from '@testing-library/react';
-// import { vi } from 'vitest';
 
 describe('SignUp', () => {
   it('should render the Sign up text properly', () => {
@@ -30,10 +29,12 @@ describe('SignUp', () => {
     .toHaveAttribute('name', 'name'); 
     
     const emailInput = screen.getByPlaceholderText('email')
-    expect(emailInput).toHaveAttribute('name', 'email');  
+    expect(emailInput)
+    .toHaveAttribute('name', 'email');  
     
     const passwordInput = screen.getByPlaceholderText('password')
-    expect(passwordInput).toHaveAttribute('name', 'password');  
+    expect(passwordInput)
+    .toHaveAttribute('name', 'password');  
   });
 });
 

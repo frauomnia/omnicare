@@ -70,7 +70,7 @@ export default function VolunteersList() {
       />
       {/* show list of volunteers */}
       <div> 
-        <h3 className="my-4 font-bold">List of doctors</h3>
+        <h3 className="my-4 text-xl font-bold text-[#48752C]">List of doctors</h3>
       </div>
       <div className="my-4 grid grid-cols-3 gap-3">
         {volunteers.length === 0 ? (

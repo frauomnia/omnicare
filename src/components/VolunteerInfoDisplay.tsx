@@ -1,6 +1,5 @@
 
 import * as React from "react"
-
 import { Volunteer } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";

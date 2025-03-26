@@ -3,15 +3,15 @@
 import Navbar from "@/components/Navbar";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-
 import Link from "next/link";
 import LogOutButton from "@/components/LogOutButton";
 import Footer from "@/components/Footer";
 
 export default async function AdminPage() {
-  const session = await auth();
 
-  if(!session) redirect('/');
+    const session = await auth();
+    // if user not logged in, redirect to homepage
+    if(!session) redirect('/');
   
   return (
    <div>

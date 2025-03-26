@@ -6,8 +6,9 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 const SignInPage = async () => {
-    
+
     const session = await auth();
+    // when user logs in, redirect to homepage
     if(session) redirect('/');
 
     return(
@@ -15,7 +16,6 @@ const SignInPage = async () => {
             <Navbar />
             <div className="flex flex-col w-[50%] items-center text-[#48752C] mt-5 ml-auto mr-auto bg-[#F1E6D0] rounded-xl">
                 <p className="text-lg mb-5 mt-5 font-semibold">Sign in</p>
-                {/* <form onSubmit={handleSubmit}> */}
                <form action={
                 async(formData: FormData) => {
                     "use server"

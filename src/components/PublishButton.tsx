@@ -26,7 +26,7 @@ export default function PublishButton({volunteer}: VolunteerInfoDisplayProps) {
        <>
         <button onClick={handlePublish}
         className="btn border-2 border-[#48752C] text-[#48752C] bg-[#F1E6D0] shadow-md">
-                Publish
+            Publish
         </button>
        </>
     )

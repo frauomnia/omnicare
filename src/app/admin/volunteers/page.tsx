@@ -36,10 +36,10 @@ export default function AdminVolunteersPage() {
                         <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Name</p>
                     </th>
                     <th className="p-4 border-b border-[#F1E6D0] bg-blue-gray-50">
-                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Publish</p>
+                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Delete</p>
                     </th>
                     <th className="p-4 border-b border-[#F1E6D0] bg-blue-gray-50">
-                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Delete</p>
+                        <p className="block font-sans text-sm antialiased font-bold leading-none text-[#F1E6D0] opacity-70">Publish</p>
                     </th>
                 </tr>
             </thead>

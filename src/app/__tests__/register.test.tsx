@@ -1,7 +1,6 @@
 import * as React from "react"
 import AddVolunteerPage  from '../register/page';
 import { render, screen } from '@testing-library/react';
-// import { vi } from 'vitest';
 
 describe('AddVolunteerPage', () => {
   it('should render the form header text properly', () => {

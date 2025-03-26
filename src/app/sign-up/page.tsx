@@ -7,6 +7,7 @@ import Navbar from "../../components/Navbar";
 export default function SignUp() {
 
     const handleSubmit = async (event: React.FormEvent) => {
+        // on form submission, prevent default
         event.preventDefault();
 
         const formData = new FormData(event.target as HTMLFormElement);

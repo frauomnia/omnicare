@@ -25,7 +25,7 @@ export default function FilterSystem(
         onFilterChange } : FilterProps) 
         {
         return (
-            <div className="grid grid-cols-4 justify-items-center gap-1 rounded-sm mt-5">
+            <div className="grid grid-cols-5 justify-items-center gap-1 rounded-sm mt-5">
                 <div>
                     <select
                     className="bg-[#48752C] text-[#F1E6D0] placeholder:text-[#F1E6D0] text-sm font-bold border border-[#F1E6D0] rounded pl-3 pr-10 py-2 transition duration-300 ease focus:outline-none focus:border-[#F1E6D0] hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer"
@@ -77,6 +77,13 @@ export default function FilterSystem(
                                 <option key={language} value={language} >{language}</option>
                             ))}
                     </select>
+                </div>
+                <div className="text-[#48752C]">
+                    <div onClick={() => {
+                        window.location.href = "/volunteersList/";
+                        }} 
+                        className="font-bold text-base underline cursor-pointer"
+                        >Reset all filters</div>
                 </div>
             </div>
         )
