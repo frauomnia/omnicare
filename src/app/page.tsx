@@ -12,7 +12,7 @@ export default async function Home() {
 
   const session = await auth();
   
-  // match email coming from session with db to get user role
+  // query User in database and match user.email with email from session.user 
   const userDB = await prisma.user.findFirst({
     where: {
       email: session?.user?.email

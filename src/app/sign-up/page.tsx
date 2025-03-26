@@ -22,8 +22,11 @@ export default function SignUp() {
                 },
                 body: JSON.stringify(formValues)
             });
-        }  
-            catch (error) {
+
+            if (response.ok) {
+                window.location.href = "/";
+            }
+        } catch (error) {
             console.error(error);
         }
     }

@@ -20,8 +20,10 @@ export default function VolunteersList() {
     language: '',
   });
 
+  // fetch filter options from API and set the options states
   useEffect(() => {
     fetch('/api/filterOptions')
+    // parse the response as json 
     .then((res) => res.json()) 
     .then((volunteers) => {
       setMedicalSpecialities(volunteers.medicalSpecialities);
@@ -30,13 +32,14 @@ export default function VolunteersList() {
       setLanguages(volunteers.languages);
       setLoading(false);
     })
-  }, [])
+  }, []);
 
-  // fetch filtered volunteers' list 
+  // fetch volunteers' list again per selected filters and set the volunteers state
   useEffect(() => {
     async function fetchVolunteers() {
       try {
         const response = await fetch(`/api/volunteers?medicalSpeciality=${selectedFilters.medicalSpeciality}&country=${selectedFilters.country}&place=${selectedFilters.place}&language=${selectedFilters.language}`);
+        // parse the response as json 
         const data = await response.json();
         setVolunteers(data);
       } catch (error) {
@@ -47,19 +50,20 @@ export default function VolunteersList() {
     // re-fetch volunteers' list on filter options change
   }, [selectedFilters]);
 
+  // on filter change, keep previous state and add/update new filter options to selectedFilters state
   const handleFilterChange = (filter: string, value: string) => {
     setSelectedFilters((prevState) => ({
       ...prevState,
       [filter]: value,
     }));
   }
+
   return (
    <div>
       <Navbar />
       {/* user signin/signup buttons */}
       <div>
       </div>
-
       <FilterSystem 
         medicalSpecialities={medicalSpecialities}
         countries={countries}
