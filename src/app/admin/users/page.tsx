@@ -10,7 +10,6 @@ export default function AdminUsersPage() {
   const [users, setUsers] = useState<any[]>([]);
   const [isLoading, setLoading] = useState(true);
 
-  // fetch all users
   useEffect(() => {
     fetch('/api/users')
     .then((res) => res.json())

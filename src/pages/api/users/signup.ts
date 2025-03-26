@@ -1,6 +1,4 @@
 import prisma from "@/lib/db/prisma";
-import bcrypt from "bcryptjs"; 
-import { redirect } from "next/dist/server/api-utils";
 
 export default async function handler(req: any, res: any) {
     try {
@@ -9,9 +7,7 @@ export default async function handler(req: any, res: any) {
             email,
             password
         } = req.body;
-        // const salt = bcrypt.genSaltSync(10);
-        // const hash = bcrypt.hashSync(password, salt);
-        
+
         if (
             !name ||
             !email ||
