@@ -2,20 +2,8 @@ import prisma from "@/lib/db/prisma";
 
 export default async function handler(req: any, res: any) {
     const { id } = req.query;
-
-    if(req.method === "GET") {
-        try {
-            const volunteer = await prisma.volunteer.findUnique({
-                where: {id} })
-                return res.status(200).json(volunteer);
-        } catch (error )
- {
-    console.error(error);
-    return res.status(500).json({error: "Internal server error"});
-
- }
-    }
     
+    // query by id to delete volunteer as response to DELETE request
     if (req.method === "DELETE") {
         try {
             await prisma.volunteer.delete({where: {id}})
@@ -26,6 +14,7 @@ export default async function handler(req: any, res: any) {
                 }
     }
 
+    // query by id to update volunteer's published value as response to PATCH request
     if (req.method === "PATCH") {
         try {
             await prisma.volunteer.update({

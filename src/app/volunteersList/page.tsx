@@ -20,7 +20,7 @@ export default function VolunteersList() {
     language: '',
   });
 
-  // fetch filter options from API and set the options states
+  // fetch filter options from API and set the options state
   useEffect(() => {
     fetch('/api/filterOptions')
     // parse the response as json 
@@ -34,7 +34,7 @@ export default function VolunteersList() {
     })
   }, []);
 
-  // fetch volunteers' list again per selected filters and set the volunteers state
+  // fetch volunteers' list per selected filters (if any) and set the volunteers state
   useEffect(() => {
     async function fetchVolunteers() {
       try {

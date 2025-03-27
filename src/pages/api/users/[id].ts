@@ -3,6 +3,7 @@ import prisma from "@/lib/db/prisma";
 export default async function handler(req: any, res: any) {
     const { id } = req.query;
     
+    // query by id to delete user as response to DELETE request
     if (req.method === "DELETE") {
         try {
             await prisma.user.delete({where: {id}})
@@ -13,6 +14,7 @@ export default async function handler(req: any, res: any) {
                 }
     }
 
+    // query by id to update user's role as response to PATCH request
     if (req.method === "PATCH") {
         try {
             await prisma.user.update({

@@ -1,5 +1,6 @@
 import prisma from "@/lib/db/prisma";
 
+// this API handler responds to POST request and creates a new user
 export default async function handler(req: any, res: any) {
     try {
         const {
