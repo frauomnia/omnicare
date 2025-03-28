@@ -14,9 +14,7 @@ export default function DeleteButton({volunteer}: VolunteerInfoDisplayProps) {
             const response = await fetch(`/api/volunteers/${volunteer.id}`, {
                 method: "DELETE",
             });
-    
-            // const result = await response.json();
-            
+                
             if(response.ok) {
                 window.location.href = "/admin/volunteers/";
             }
